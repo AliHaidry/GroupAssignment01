@@ -25,6 +25,13 @@ ll PrimalityValidator::modulo(ll base, ll exponent, ll mod)
 *Fermat's test for checking primality
 */
 
+/*
+* If a given number is prime, then this method always returns true. 
+* If given number is composite (or non-prime), then it may return true or false, 
+* but the probability of producing incorrect result for composite is low and can be reduced by doing more 
+* iterations.
+*/
+
 bool PrimalityValidator::Fermat(ll prime, int iterations)
 {
    if (prime == 1)

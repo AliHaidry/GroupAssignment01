@@ -1,2 +1,13 @@
+5 is Prime 
 7 is Prime 
+11 is Prime 
+13 is Prime 
+17 is Prime 
+19 is Prime 
+23 is Prime 
+29 is Prime 
+31 is Prime 
+37 is Prime 
+41 is Prime 
+43 is Prime 
 47 is Prime 

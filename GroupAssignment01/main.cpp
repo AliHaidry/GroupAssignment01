@@ -54,24 +54,25 @@ int main()
    int primeInputNum;
    int notPrimeInputNum;
 
-   int iteration = 50;
+   int iteration = 50; 
    ll num;
 
    primeFile.open("primeFile.txt"); // write data to the file.
    notPrimeFile.open("notPrimeFile.txt"); // write data to the file.
 
-   for (int counter = 0; counter < 5; counter++)
+   for (int counter = 0; counter < 50; counter++)
    {
       cout << "Enter integer > 3 to test primality: ";
       std::cout << "\n";
       cout << endl;
       cin >> num;
+     
       std::cout << "\n";
       if (myprimalityValidator.Fermat(num, iteration))
       {
          cout << num << " is prime" << endl;
          primeFile << num << setw(6) << " is Prime " << endl;
-       //primeFile << "Primes" << setw(6) << num << endl;
+       
       }
       else
       {
