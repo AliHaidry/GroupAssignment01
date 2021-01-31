@@ -55,6 +55,7 @@ int main()
    int notPrimeInputNum;
 
    int iteration = 50; 
+   // 2^63 --- 9,223,372,036,854,775,808 (Range)
    ll num;
 
    primeFile.open("primeFile.txt"); // write data to the file.
