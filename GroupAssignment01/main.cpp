@@ -49,6 +49,7 @@ int main()
 
    std::cout << "**************Primality Validator************************\n" << endl;
 
+   const int VALUE_LIMIT = 1000000; // One Million
    ofstream primeFile;
    ofstream notPrimeFile;
    int primeInputNum;
@@ -56,37 +57,44 @@ int main()
 
    int iteration = 50; 
    // 2^63 --- 9,223,372,036,854,775,808 (Range)
-   ll num;
+   ll num = 0;
 
    primeFile.open("primeFile.txt"); // write data to the file.
    notPrimeFile.open("notPrimeFile.txt"); // write data to the file.
 
-   for (int counter = 0; counter < 50; counter++)
-   {
-      cout << "Enter integer > 3 to test primality: ";
-      std::cout << "\n";
-      cout << endl;
-      cin >> num;
-     
-      std::cout << "\n";
-      if (myprimalityValidator.Fermat(num, iteration))
+      for (int counter = 0; counter < VALUE_LIMIT; counter++)
       {
-         cout << num << " is prime" << endl;
-         primeFile << num << setw(6) << " is Prime " << endl;
-       
+         cout << "Enter integer > 3 to test primality or enter '-1' to exit: ";
+         std::cout << "\n";
+         cout << endl;
+         cin >> num;
+
+         if (num == -1)
+         {
+            cout << "You exit the program!" << endl;
+            break;
+         }
+
+         std::cout << "\n";
+         if (myprimalityValidator.Fermat(num, iteration))
+         {
+            cout << num << " is prime" << endl;
+            primeFile << num << setw(6) << " is Prime " << endl;
+
+         }
+         else
+         {
+            cout << num << " is not prime" << endl;
+            notPrimeFile << num << setw(6) << " is not Prime " << endl;
+         }
       }
-      else
-      {
-         cout << num << " is not prime" << endl;
-         notPrimeFile << num << setw(6) << " is not Prime " << endl;
-      }
-   }
+      
 
    primeFile.close();
    notPrimeFile.close();
 
 
-   cout << "Hello C++" << endl;
+   
 
    system("PAUSE");
    return 0;
