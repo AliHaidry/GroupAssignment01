@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
+#include <fstream> // for file library
+#include <iomanip> // for input / output manipulators it works for 'iostream' and 'fstream'.
 
 #include "requiredMemory.h";
 #include "primeFactors.h";
@@ -47,16 +49,39 @@ int main()
 
    std::cout << "**************Primality Validator************************\n" << endl;
 
+   ofstream primeFile;
+   ofstream notPrimeFile;
+   int primeInputNum;
+   int notPrimeInputNum;
+
    int iteration = 50;
    ll num;
-   cout << "Enter integer to test primality: ";
-   std::cout << "\n";
-   cin >> num;
-   std::cout << "\n";
-   if (myprimalityValidator.Fermat(num, iteration))
-      cout << num << " is prime" << endl;
-   else
-      cout << num << " is not prime" << endl;
+
+   primeFile.open("primeFile.txt"); // write data to the file.
+   notPrimeFile.open("notPrimeFile.txt"); // write data to the file.
+
+   for (int counter = 0; counter < 5; counter++)
+   {
+      cout << "Enter integer > 3 to test primality: ";
+      std::cout << "\n";
+      cout << endl;
+      cin >> num;
+      std::cout << "\n";
+      if (myprimalityValidator.Fermat(num, iteration))
+      {
+         cout << num << " is prime" << endl;
+         primeFile << num << setw(6) << " is Prime " << endl;
+       //primeFile << "Primes" << setw(6) << num << endl;
+      }
+      else
+      {
+         cout << num << " is not prime" << endl;
+         notPrimeFile << num << setw(6) << " is not Prime " << endl;
+      }
+   }
+
+   primeFile.close();
+   notPrimeFile.close();
 
 
    cout << "Hello C++" << endl;

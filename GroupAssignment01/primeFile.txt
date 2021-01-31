@@ -1,0 +1,2 @@
+7 is Prime 
+47 is Prime 
