@@ -75,18 +75,23 @@ int main()
             break;
          }
 
-         std::cout << "\n";
-         if (myprimalityValidator.Fermat(num, iteration))
+       
+         else if (myprimalityValidator.Fermat(num, iteration))
          {
+            cout << endl;
+
             cout << num << " is prime" << endl;
             primeFile << num << setw(6) << " is Prime " << endl;
 
          }
+
          else
          {
             cout << num << " is not prime" << endl;
             notPrimeFile << num << setw(6) << " is not Prime " << endl;
          }
+
+        
       }
       
 
