@@ -1,5 +1,9 @@
+13 is Prime 
+17 is Prime 
 9001 is Prime 
-53 is Prime 
-199921 is Prime 
-193 is Prime 
-1013 is Prime 
+67 is Prime 
+99901 is Prime 
+89 is Prime 
+127 is Prime 
+97 is Prime 
+19 is Prime 

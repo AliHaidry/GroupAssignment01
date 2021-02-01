@@ -12,7 +12,9 @@ ll PrimalityValidator::modulo(ll base, ll exponent, ll mod)
    while (exponent > 0)
    {
       if (exponent % 2 == 1)
+      {
          x = (x * y) % mod;
+      }
       y = (y * y) % mod;
       exponent = exponent / 2;
    }
@@ -36,15 +38,15 @@ bool PrimalityValidator::Fermat(ll prime, int iterations)
 {
    if (prime == 1)
    {
-      return false;
+      return false; 
    }
    for (int counter = 0; counter < iterations; counter++)
    {
       ll a = rand() % (prime - 1) + 1;
       if (modulo(a, prime - 1, prime) != 1)
       {
-         return false;
+         return false; // indicates not prime number
       }
    }
-   return true;
+   return true; // indicates is prime number
 }
